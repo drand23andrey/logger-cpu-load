@@ -1,0 +1,7 @@
+.table-tr__record .table-th__record-time, .table-tr__record .table-th__record-load {
+    cursor: pointer;
+}
+
+.container__content {
+    padding-top: 20px
+}
