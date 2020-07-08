@@ -1,9 +1,9 @@
 import requests, psutil
 import sys, os, time, datetime, daemonize
 
-def logger(logTime, logLoad, domain='http://127.0.0.1:8001/api/log/'):
+def logger(logTime, logLoad, domain='http://127.0.0.1:8001'):
     try:
-        requests.post(domain, json={"record":{"name":str(logTime),"load":logLoad}})
+        requests.post(domain + '/api/log/', json={"record":{"name":str(logTime),"load":logLoad}})
         print(str(logTime) + " | " + str(logLoad))
     except Exception as e:
         print(str(logTime) + " | Error: {}".format(e))
@@ -22,7 +22,7 @@ def main():
                 logger(datetime.datetime.now(), psutil.cpu_percent(), otherDomian)
                 time.sleep(interval)
     else:
-        print('Error. Unknown args. \nTry: -h http://yourdomain.com/api/log/')
+        print('Error. Unknown args. \nTry: -h http://yourdomain.com')
         os.system('PAUSE')
 
 if __name__ == "__main__":
