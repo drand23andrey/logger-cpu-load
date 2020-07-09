@@ -51,7 +51,6 @@ python3 vps/manage.py runserver 127.0.0.1:8001
 - очистка базы данных проводится путем удаления файла db.sqlite3, и выполнения команды `python3 manage.py migrate`
 
 ### Requirements для сервера и клиент-демона:
-- python==3.8.0
 - requests==2.22.0
 - daemonize==2.5.0
 - psutil==5.7.0
